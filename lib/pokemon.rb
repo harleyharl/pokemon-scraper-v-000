@@ -35,6 +35,7 @@ class Pokemon
 
 #finds the object with the name "pikachu" in our Pokemon class, changes pikachu's hp property
   def alter_hp(new_hp, db)
+      binding.pry
       db.execute("UPDATE pokemon SET hp = ? WHERE id = ?", new_hp, self.id)
   end
 
