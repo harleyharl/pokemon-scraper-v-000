@@ -30,7 +30,7 @@ class Pokemon
 #finds the pokemon in a db with the given id, and creates a new pokemon object utilising the data in the database
   def self.find(id, db)
     pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", id)
-    Pokemon.new(id: id, name: pokemon[0][1], type: pokemon[0][2], db: db, hp: 60)
+    Pokemon.new(id: id, name: pokemon[0][1], type: pokemon[0][2], db: db, hp: pokemon[0][3])
   end
 
 #finds the object with the name "pikachu" in our Pokemon class, changes pikachu's hp property
