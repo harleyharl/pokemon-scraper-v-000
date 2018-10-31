@@ -27,7 +27,7 @@ class Pokemon
   end
 
 #this might break if we add or delete columns from db at some point... how can i fix that?
-#finds the pokemon in a db with the given id, and creates a new pokemon object utilising the data maintained in the database
+#finds the pokemon in a db with the given id, and creates a new pokemon object utilising the data in the database
   def self.find(id, db)
     pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", id)
     Pokemon.new(id: id, name: pokemon[0][1], type: pokemon[0][2], db: db, hp: 60)
